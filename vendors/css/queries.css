@@ -1,0 +1,117 @@
+
+
+/*big tablets from 1200 px */
+@media only screen and (max-width: 1200px){
+    .hero-text-box{
+        width: 100%;
+        padding: 0 6%;
+}
+.row{
+    padding: 0 2%;
+}
+}
+
+/*small tablets to big tablets from 768 to 1023 px */
+@media only screen and (max-width: 1023px){
+    header nav .row{
+        margin: 0;
+        padding: 0;
+    }
+    .long-copy{
+        width: 80%;
+        margin-left: 10%;
+    }
+    body{
+        font-size: 18px;
+    }
+    section{
+        padding: 60px 0;
+    }
+    .step-box{
+        margin-top: 10px;
+    }
+    .step-box:last-child{
+        margin-top: 10px;
+    }
+    .works-step{margin-bottom: 30px;}
+    .works-step:last-of-type{margin-bottom: 60px;}
+    .app-screen{width:50%;}
+    .icon-small{
+        width: 17px;
+        margin-right: 5px;
+    }
+    .city-feature{
+        font-size: 90%;
+    }
+    .plan-box{
+        width: 100%;
+        margin-left: 0%;
+    }
+    .plan-price{
+        font-size: 250%;
+    }
+    .contact-form{width: 100%;}
+}
+
+/*small phones to small tablets from 481 to 767 px */
+@media only screen and (max-width: 767px){
+    .row{
+        margin: 0px;
+        padding: 0px;
+    }
+    .main-nav li{margin-left: 30px;}
+    body{font-size: 16px}
+    section{padding: 30px 0;}
+    .works-step{padding-bottom: 40px;
+    font-size: 150%;}
+    .section-feature .box{
+        width: 24%;
+        margin-left: 6px;
+    }
+    .section-cities .box{
+        width: 25%;
+    }
+    .section-testimonials .review{
+        width: 33.33%;
+    }
+    .section-plans .review{
+        width: 32%;
+        padding-left: 25px;
+        font-size: 80%;
+        
+    }
+    /* .section-form .row div{
+        width: 40%;
+        margin-left: 10px;
+    } */
+     form{
+        padding: 0 5px;
+     }
+     footer .row .col{
+        width: 50%;
+     }
+
+}
+
+/*small phones from 0 to 480 px */
+@media only screen and (max-width: 480px){
+    .main-nav li{
+        display: none;
+    }
+
+    .section-feature .box {
+    padding: 0;
+    width: 23.5%;
+
+
+}
+.section-feature .row 
+     .section-plans .review{
+        font-size: 50%;
+     }
+
+     footer{
+        padding: 10px;
+     }
+     
+}
