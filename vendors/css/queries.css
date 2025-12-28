@@ -101,13 +101,19 @@
 
     .section-feature .box {
     padding: 0;
-    width: 23.5%;
+    width: 22.5%;
 
 
 }
-.section-feature .row 
+.section-testimonials .row{
+    font-size: 55%;
+}
+.section-cities {
+    font-size: 40%;
+}
+.section-feature .row ,
      .section-plans .review{
-        font-size: 50%;
+        font-size: 30%;
      }
 
      footer{
