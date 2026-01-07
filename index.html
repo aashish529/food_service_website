@@ -20,15 +20,17 @@
     <header>
         <nav>
         <div class="row">
-             <img class="logo" src="resources/img/logo.png" alt="">
-             <ul class="main-nav">
+            <img class="logo" src="resources/img/logo.png" alt="Omnifood logo">
+            <a class="mobile-nav-icon js--nav-icon"><ion-icon name="menu-outline"></ion-icon></a>
+            
+            <ul class="main-nav js--main-nav">
                 <li><a href="#plans">Food delivery</a></li>
                 <li><a href="#works">How it works</a></li>
                 <li><a href="#cities">Our cities</a></li>
                 <li><a href="#contact">Sign-up</a></li>
-             </ul>
+            </ul>
         </div>
-         </nav>
+</nav>
         <div class="hero-text-box">
             <h1>Goodbye junk food <br>Hello super healthy food</h1>
             <a class="btn btn-full" href="#plans">I'm Hungry</a>
@@ -393,30 +395,31 @@
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
    
-    AOS.init({
-    disable: 'mobile' // This will keep the site smooth on phones
+  $(document).ready(function() {
+    
+    $('.js--nav-icon').click(function() {
+        var nav = $('.js--main-nav');
+        var icon = $('.js--nav-icon ion-icon');
+        
+        nav.slideToggle(200); 
+        
+        if (icon.attr('name') === 'menu-outline') {
+            icon.attr('name', 'close-outline');
+        } else {
+            icon.attr('name', 'menu-outline');
+        }
     });
-  </script>
-<script>
-$(document).ready(function(){
-  
-  $("a").on('click', function(event) {
-    if (this.hash !== "") {
-      
-      event.preventDefault();
 
-      
-      var hash = this.hash;
-
-      
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-
-        window.location.hash = hash;
-      });
-    } 
-  });
+    $('a[href*="#"]').on('click', function(e) {
+        if (this.hash !== "") {
+            
+            if ($(window).width() < 768) {
+                $('.js--main-nav').slideUp(200);
+                $('.js--nav-icon ion-icon').attr('name', 'menu-outline');
+            }
+            
+        }
+    });
 });
 </script>
 
