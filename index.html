@@ -394,12 +394,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-   
-  $(document).ready(function() {
+$(document).ready(function() {
     
-    $('.js--nav-icon').click(function() {
-        var nav = $('.js--main-nav');
-        var icon = $('.js--nav-icon ion-icon');
+    $('.mobile-nav-icon').click(function() {
+        var nav = $('.main-nav');
+        var icon = $('.mobile-nav-icon ion-icon');
         
         nav.slideToggle(200); 
         
@@ -410,15 +409,31 @@
         }
     });
 
-    $('a[href*="#"]').on('click', function(e) {
-        if (this.hash !== "") {
+    $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+        
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             
-            if ($(window).width() < 768) {
-                $('.js--main-nav').slideUp(200);
-                $('.js--nav-icon ion-icon').attr('name', 'menu-outline');
+            if (target.length) {
+                event.preventDefault();
+                
+                if ($(window).width() < 768) {
+                    $('.main-nav').slideUp(200);
+                    $('.mobile-nav-icon ion-icon').attr('name', 'menu-outline');
+                }
+
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 800);
             }
-            
         }
+    });
+
+    
+    AOS.init({
+        duration: 1000,
+        once: true
     });
 });
 </script>
