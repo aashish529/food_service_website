@@ -30,6 +30,15 @@ h1{
     word-spacing: 3px;
 
 }
+img {
+    content-visibility: auto; 
+    transform: translateZ(0); 
+    backface-visibility: hidden;
+}
+
+.meal-photo img {
+    will-change: transform; 
+}
 header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/header.jpg);
     background-attachment: fixed;
