@@ -393,10 +393,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
+ <script>
 $(document).ready(function() {
     
-    $('.mobile-nav-icon').click(function() {
+    AOS.init({
+        duration: 800,
+        offset: 120,
+        once: true,    
+        disable: 'mobile' 
+    });
+
+   
+    $('.mobile-nav-icon').on('click', function() {
         var nav = $('.main-nav');
         var icon = $('.mobile-nav-icon ion-icon');
         
@@ -409,8 +417,8 @@ $(document).ready(function() {
         }
     });
 
-    $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
-        
+    
+    $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').on('click', function(event) {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
@@ -418,8 +426,9 @@ $(document).ready(function() {
             if (target.length) {
                 event.preventDefault();
                 
+               
                 if ($(window).width() < 768) {
-                    $('.main-nav').slideUp(200);
+                    $('.main-nav').hide();
                     $('.mobile-nav-icon ion-icon').attr('name', 'menu-outline');
                 }
 
@@ -428,12 +437,6 @@ $(document).ready(function() {
                 }, 800);
             }
         }
-    });
-
-    
-    AOS.init({
-        duration: 1000,
-        once: true
     });
 });
 </script>
