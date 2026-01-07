@@ -13,21 +13,7 @@ html,body{
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
 }
-.mobile-nav-icon {
-    float: right;
-    margin-top: 30px;
-    cursor: pointer;
-    display: none; /* Hidden by default on desktop */
-}
 
-.mobile-nav-icon ion-icon {
-    font-size: 200%;
-    color: #fff;
-}
-section {
-    opacity: 1;
-    transition: opacity 1s;
-}
 .row{
     margin: 0 70px;
     
